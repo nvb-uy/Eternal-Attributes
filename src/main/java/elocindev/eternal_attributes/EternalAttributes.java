@@ -35,8 +35,8 @@ public class EternalAttributes
 implements ModInitializer, ClientModInitializer
 //?}
 {
-    public static final String MODNAME = "Example Mod";
-    public static final String MODID = "example_mod";
+    public static final String MODNAME = "Eternal Attributes";
+    public static final String MODID = "eternal_attributes";
     public static final Logger LOGGER = LogManager.getLogger(MODNAME);
 
     public EternalAttributes(
