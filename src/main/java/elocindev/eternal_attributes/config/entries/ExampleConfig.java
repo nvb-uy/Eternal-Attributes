@@ -1,6 +1,6 @@
-package elocindev.examplemod.config.entries;
+package elocindev.eternal_attributes.config.entries;
 
-import elocindev.examplemod.ExampleMod;
+import elocindev.eternal_attributes.EternalAttributes;
 import elocindev.necronomicon.api.config.v1.NecConfigAPI;
 import elocindev.necronomicon.config.NecConfig;
 
@@ -9,7 +9,7 @@ public class ExampleConfig {
 
 
     public static String getFile() {
-        return NecConfigAPI.getFile(ExampleMod.MODID+".json5");
+        return NecConfigAPI.getFile(EternalAttributes.MODID+".json5");
     }
 
     public String myString = "example";

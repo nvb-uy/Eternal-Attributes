@@ -1,6 +1,6 @@
-package elocindev.examplemod.config;
+package elocindev.eternal_attributes.config;
 
-import elocindev.examplemod.config.entries.ExampleConfig;
+import elocindev.eternal_attributes.config.entries.ExampleConfig;
 import elocindev.necronomicon.api.config.v1.NecConfigAPI;
 
 public class Configs {
