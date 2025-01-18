@@ -1,5 +1,7 @@
 package elocindev.eternal_attributes.registry;
 
+import java.util.Vector;
+
 import elocindev.eternal_attributes.EternalAttributes;
 import elocindev.necronomicon.api.resource.v1.ResourceIdentifier;
 import net.minecraft.entity.attribute.ClampedEntityAttribute;
@@ -8,6 +10,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 
 public class AttributeRegistry {
+    public static Vector<EntityAttribute> ATTRIBUTES = new Vector<EntityAttribute>();
     
     // PRIMARY
     public static final EntityAttribute CREATION_POWER = attribute(new ClampedEntityAttribute("attribute.name.eternal_attributes.creation_power", 0.0D, 0.0D, 2048.0D).setTracked(true), "creation");
@@ -27,12 +30,14 @@ public class AttributeRegistry {
     public static final EntityAttribute NATURE_POWER = attribute(new ClampedEntityAttribute("attribute.name.eternal_attributes.nature_power", 0.0D, 0.0D, 2048.0D).setTracked(true), "nature");
     public static final EntityAttribute DECAYING_POWER = attribute(new ClampedEntityAttribute("attribute.name.eternal_attributes.decaying_power", 0.0D, 0.0D, 2048.0D).setTracked(true), "decaying");
 
-    // RESISTANCES
+    // RESISTANCES (Non Spell Power Attributes)
     public static final EntityAttribute CORRUPTION_RESISTANCE = attribute(new ClampedEntityAttribute("attribute.name.eternal_attributes.corruption_resistance", 0.0D, 0.0D, 2048.0D).setTracked(true), "corruption_resistance");
 
     public static EntityAttribute attribute(EntityAttribute attribute, String name) {
+        ATTRIBUTES.add(attribute);
+        
         return Registry.register(Registries.ATTRIBUTE, ResourceIdentifier.of(EternalAttributes.MODID, name), attribute);
     }
 
-    public static void register() {}
+    public static void register() { }
 }

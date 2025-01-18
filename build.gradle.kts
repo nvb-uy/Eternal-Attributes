@@ -6,6 +6,9 @@ val templateSettings = object : BlahajSettings {
 	override val depsHandler: BlahajDependencyHandler get() = object : BlahajDependencyHandler {
 		override fun addGlobal(mod : ModData, deps: DependencyHandler) {
 			deps.modImplementation("maven.modrinth:necronomicon:${project.property("deps.necronomicon_version")}")
+
+			// Optional Compats
+			deps.modImplementation("maven.modrinth:spell-power:${project.property("deps.spellpower_version")}-fabric")
 		}
 
 		override fun addFabric(mod : ModData, deps: DependencyHandler) {

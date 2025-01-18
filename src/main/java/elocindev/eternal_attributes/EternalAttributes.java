@@ -4,6 +4,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import elocindev.eternal_attributes.config.Configs;
+import elocindev.eternal_attributes.registry.SpellSchoolRegistry;
+import elocindev.eternal_attributes.registry.StatusEffectRegistry;
+import elocindev.necronomicon.api.NecUtilsAPI;
 //? if fabric {
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
@@ -53,6 +56,11 @@ implements ModInitializer, ClientModInitializer
         /*modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
         *///?}
+
+        if (NecUtilsAPI.isModLoaded("spell_power")) {
+            StatusEffectRegistry.register();
+            SpellSchoolRegistry.register();
+        }
     }
 
     //? if fabric {
